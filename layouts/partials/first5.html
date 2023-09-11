@@ -1,0 +1,13 @@
+<div class="card border-primary h-100">
+  <div class="card-body">
+    <div class="list-group">
+      <a class="list-group-item list-group-item-action active">Latest Posts</a>
+
+      {{range first 5 (where .Site.RegularPages.ByDate.Reverse "Section" "b" )}}
+      <a href="{{.RelPermalink}}" class="list-group-item list-group-item-action text-truncate"
+        >{{- .Title -}}&emsp; <small>〜&nbsp;{{.Params.subtitle}}&nbsp;〜</small></a
+      >
+      {{ end }}
+    </div>
+  </div>
+</div>

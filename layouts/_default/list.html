@@ -1,0 +1,13 @@
+{{ define "style"}}
+{{- partial "head-sublist"}}
+{{end}}
+{{define "main"}}
+    <section class="top-container py-5 text-center container-fluid">
+      <div class="blogtitle-area mx-auto bg-light bg-opacity-50 rounded-5 mt-5">
+        <h1 class="display-1 py-3"><small>-article list-</small></h1>
+      </div>
+    </section>
+    {{- partial "cardlist.html" . -}}
+    {{- partial "alltags.html" . -}}
+    {{- partial "bloglistlinks.html" . -}}
+{{end}}

@@ -1,0 +1,14 @@
+<div
+  class="alltags-wrapper  mx-auto"
+  
+>
+  <div class="alltags gap-2 text-dark justify-content-center mx-auto rounded fs-5">
+    <span>&emsp;All tags:</span>
+    {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count }} {{
+    with $.Site.GetPage (printf "/tags/%s" $name) }}
+    <div class="tagbutton">
+      <a href="{{ .RelPermalink }}">{{$name}}</a>
+    </div>
+    {{end}} {{end}}
+  </div>
+</div>

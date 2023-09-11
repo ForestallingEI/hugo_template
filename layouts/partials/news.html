@@ -1,0 +1,18 @@
+
+<section id="cards" class="mx-auto py-1" style="width: 80%">
+    <div class="card my-5 pb-4 shadow rounded">
+      <div class="card-body px-5 pt-4">
+        <h3 class="card-title">{{.Title}} </h3>
+        <h6 class="card-subtitle fst-italic ps-1 mt-2 mb-5">
+          <i class="fa-regular fa-calendar-check" style="margin-right: 0.5rem;"></i>{{.Date | time.Format ":date_long" }}
+        </h6>
+        <p class="card-text">{{.Content}}</p>
+        <div class="postfooter text-center fw-bold mt-5 pt-5">
+          {{ with .NextInSection}}<a href="{{ .RelPermalink }}">{{- .Title -}}</a
+          >&nbsp;<< &emsp;&emsp;{{ end }} 
+          {{ with .PrevInSection}} &emsp;&emsp; >>&nbsp;
+          <a href="{{ .RelPermalink }}">{{- .Title -}}</a>{{ end }}
+        </div>
+
+      </div>
+  </section>
